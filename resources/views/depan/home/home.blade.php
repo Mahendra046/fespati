@@ -1,8 +1,10 @@
 <x-depan title="Beranda | Fespati Ketapang">
     <!-- ======= Hero Section ======= -->
-    <section id="hero" class="hero">
+    <section id="hero" class="hero" style="
+    
+    ">
 
-        <div class="info d-flex align-items-center">
+        {{-- <div class="info d-flex align-items-center">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">
@@ -18,34 +20,31 @@
                         <br>
                         <h4 class="text-light" data-aos="fade-up"><span><i>-UPGRADE YOUR PERFORMANCE-</i></span></h4>
                         <br>
-                        <a data-aos="fade-up" data-aos-delay="200" href="{{url('kontak')}}" style="" class="btn-get-started">Ayo
+                        <a data-aos="fade-up" data-aos-delay="200" href="{{ url('kontak') }}" style=""
+                            class="btn-get-started">Ayo
                             Bergabung</a>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
             <div class="carousel-item active"
-                style="background-image: url(public/up/assets/img/berita/background4.jpg)">
+                style="background-image: url(public/up/assets/img/banner/bg1.jpg)">
             </div>
-            {{-- <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/hero-carousel-2.jpg)">
-        </div>
-        <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/hero-carousel-3.jpg)">
-        </div>
-        <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/hero-carousel-4.jpg)">
-        </div>
-        <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/hero-carousel-5.jpg)">
-        </div> --}}
+            <div class="carousel-item" style="background-image: url(public/up/assets/img/banner/bg2.jpg)">
+            </div>
+            <div class="carousel-item" style="background-image: url(public/up/assets/img/banner/bg3.jpg)">
+            </div>
 
-            {{-- <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+            <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
             <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
         </a>
 
         <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
             <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-        </a> --}}
+        </a>
 
         </div>
 
@@ -68,7 +67,9 @@
                             <div class="post-item position-relative h-100">
 
                                 <div class="post-img position-relative overflow-hidden">
-                                    <img src="{{ url("public/$berita->foto") }}" style="height:250px; width:500px; background-size: cover;" class="img-fluid" alt="">
+                                    <img src="{{ url("public/$berita->foto") }}"
+                                        style="height:250px; width:500px; background-size: cover;" class="img-fluid"
+                                        alt="">
                                     <span class="post-date">{{ $berita->created_at->format('d F Y') }}</span>
                                 </div>
 
@@ -88,8 +89,9 @@
 
                                     <hr>
 
-                                    <a href="{{url('berita/detail', $berita->id)}}" class="readmore stretched-link"><span>Baca
-                                        Selengkapnya</span><i class="bi bi-arrow-right"></i></a>
+                                    <a href="{{ url('berita/detail', $berita->id) }}"
+                                        class="readmore stretched-link"><span>Baca
+                                            Selengkapnya</span><i class="bi bi-arrow-right"></i></a>
 
                                 </div>
 
@@ -101,7 +103,7 @@
                 <br><br>
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">
-                        <a data-aos="fade-up" data-aos-delay="200" href="{{url('berita')}}" class="btn-get-started"
+                        <a data-aos="fade-up" data-aos-delay="200" href="{{ url('berita') }}" class="btn-get-started"
                             style="font-family: var(--font-primary);
                         font-weight: 500;
                         font-size: 20px;
@@ -130,20 +132,21 @@
 
                 <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
                     @foreach ($list_event as $event)
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
-                        <div class="portfolio-content h-100" style=" max-height: 250px; overflow: hidden;">
-                            <img src="{{url("public/$event->foto")}}"style="object-fit:cover; width:100% height:100%;"  class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>{{$event->nama_event}}</h4>
-                                <p>{{$event->nama_event}}</p>
-                                <a href="{{url("public/$event->foto")}}" title="{{$event->nama_event}}"
-                                    data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i
-                                        class="bi bi-zoom-in"></i></a>
-                                <a href="{{url('event_detail',$event->id)}}" title="Daftar Sekarang" class="details-link"><i
-                                        class="bi bi-link-45deg"></i></a>
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
+                            <div class="portfolio-content h-100" style=" max-height: 250px; overflow: hidden;">
+                                <img src="{{ url("public/$event->foto") }}"style="object-fit:cover; width:100% height:100%;"
+                                    class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h4>{{ $event->nama_event }}</h4>
+                                    <p>{{ $event->nama_event }}</p>
+                                    <a href="{{ url("public/$event->foto") }}" title="{{ $event->nama_event }}"
+                                        data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i
+                                            class="bi bi-zoom-in"></i></a>
+                                    <a href="{{ url('event_detail', $event->id) }}" title="Daftar Sekarang"
+                                        class="details-link"><i class="bi bi-link-45deg"></i></a>
+                                </div>
                             </div>
-                        </div>
-                    </div><!-- End Projects Item -->
+                        </div><!-- End Projects Item -->
                     @endforeach
 
                 </div><!-- End Projects Container -->
@@ -156,19 +159,11 @@
     </main><!-- End #main -->
 
     <style>
-        .hero .info .btn-get-started {
-                        font-family: var(--font-primary);
-                        font-weight: 500;
-                        font-size: 16px;
-                        letter-spacing: 1px;
-                        display: inline-block;
-                        padding: 12px 30px;
-                        border-radius: 50px;
-                        margin: 6px;
-                        background: var(--color-primary);
-        }
-        .hero .info .btn-get-started:hover {
-            font-size: 17px;
-        }
+       .hero .carousel-item::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.148);
+  position: absolute;
+  inset: 0;
+}
     </style>
 </x-depan>

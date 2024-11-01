@@ -8,13 +8,11 @@
     }
 @endphp
 
-<header id="header" class="header d-flex align-items-center overlay-black">
+<header id="header" class="header d-flex align-items-center overlay-black bg-light" style="padding: 0.5rem 1rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
         <a href="{{ url('beranda') }}" class="logo d-flex align-items-center">
-            <!-- Uncomment the line below if you also wish to use an image logo -->
-            <img src="{{ url('public') }}/Up/assets/img/kormi.png" alt="">
-            <img src="{{ url('public') }}/Up/assets/img/logo-fespati.png" alt="">
+            <img src="{{ url('public') }}/focus/images/logo_ppid.png" alt="">
         </a>
 
         <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
@@ -24,7 +22,7 @@
                 <x-layout.depan.header.menu-item url="beranda" label="Beranda"
                     class="{{ checkRouteActive('beranda') }}" />
                 <li class="dropdown"><a href="#"
-                        class="{{ checkRouteActive('sejarah') }} {{ checkRouteActive('visi_misi') }} {{ checkRouteActive('struktur_organisasi') }}"><span>Tentang
+                        class="text-dark {{ checkRouteActive('sejarah') }} {{ checkRouteActive('visi_misi') }} {{ checkRouteActive('struktur_organisasi') }}"><span>Tentang
                             Kami</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                     <ul>
                         <x-layout.depan.header.menu-item url="sejarah" label="Sejarah Fespati"
@@ -37,7 +35,7 @@
                 </li>
 
                 <li class="dropdown"><a href="#"
-                        class="{{ checkRouteActive('registrasi_anggota') }} {{ checkRouteActive('event') }} {{ checkRouteActive('berita') }} {{ checkRouteActive('berita/detail/{berita}') }} "><span>Informasi</span>
+                        class="text-dark {{ checkRouteActive('registrasi_anggota') }} {{ checkRouteActive('event') }} {{ checkRouteActive('berita') }} {{ checkRouteActive('berita/detail/{berita}') }} "><span>Informasi</span>
                         <i class="bi bi-chevron-down dropdown-indicator  "></i></a>
                     <ul>
                         <x-layout.depan.header.menu-item url="berita" label="Berita"
@@ -47,7 +45,7 @@
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#"
-                        class="{{ checkRouteActive('foto') }} {{ checkRouteActive('video') }}"><span>Media</span> <i
+                        class="text-dark {{ checkRouteActive('foto') }} {{ checkRouteActive('video') }}"><span>Media</span> <i
                             class="bi bi-chevron-down dropdown-indicator  "></i></a>
                     <ul>
                         <x-layout.depan.header.menu-item url="foto" label="Foto"
@@ -67,8 +65,7 @@
                 border-radius: 50px;
                 margin: 6px;
                 color: #fff;
-                background: var(--color-primary);">Hubungi
-                    Kami</a>
+                background: var(--color-primary);">Kontak</a>
 
 
             </ul>
@@ -91,7 +88,7 @@
     }
 
     .header.sticky {
-        padding: 2rem 2rem;
-        background: #124e55;
+        padding: 1rem 1rem;
+        background: #f9fafa;
     }
 </style>

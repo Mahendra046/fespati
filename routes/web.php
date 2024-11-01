@@ -77,6 +77,7 @@ Route::prefix('admin')->middleware('auth:admin')->group(function () {
     Route::resource('anggota', AnggotaController::class);
     Route::put('anggota/tolak/{anggota}',[AnggotaController::class, 'tolak']);
     Route::put('anggota/terima/{anggota}',[AnggotaController::class, 'terima']);
+    include '_/Admin.php';
 });
 
 Route::prefix('ketua')->middleware('auth:ketua')->group(function () {

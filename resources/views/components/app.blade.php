@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>{{ $title }}</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url('public/focus') }}/images/FESPATI KETAPANG.png">
-    <link href="{{ url('public/focus') }}/vendor/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
-    <link href="{{ url('public/focus') }}/vendor/chartist/css/chartist.min.css" rel="stylesheet">
-    <link href="{{ url('public/focus') }}/css/style.css" rel="stylesheet">
-    <link href="{{ url('public/focus') }}/vendor/summernote/summernote.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url('public') }}/focus/images/logo.png">
+    <link href="{{ url('public') }}/focus/vendor/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <link href="{{ url('public') }}/focus/vendor/chartist/css/chartist.min.css" rel="stylesheet">
+    <link href="{{ url('public') }}/focus/css/style.css" rel="stylesheet">
+    <link href="{{ url('public') }}/focus/vendor/summernote/summernote.css" rel="stylesheet">
     <!-- Datatable -->
-    <link href="{{ url('public/focus') }}/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="{{ url('public') }}/focus/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     {{-- font Awesome --}}
     @stack('style')
 
@@ -82,26 +82,26 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->
-    <script src="{{ url('public/focus') }}/vendor/global/global.min.js"></script>
-    <script src="{{ url('public/focus') }}/js/quixnav-init.js"></script>
-    <script src="{{ url('public/focus') }}/js/custom.min.js"></script>
+    <script src="{{ url('public') }}/focus/vendor/global/global.min.js"></script>
+    <script src="{{ url('public') }}/focus/js/quixnav-init.js"></script>
+    <script src="{{ url('public') }}/focus/js/custom.min.js"></script>
 
-    <script src="{{ url('public/focus') }}/vendor/chartist/js/chartist.min.js"></script>
+    <script src="{{ url('public') }}/focus/vendor/chartist/js/chartist.min.js"></script>
 
-    <script src="{{ url('public/focus') }}/vendor/moment/moment.min.js"></script>
-    <script src="{{ url('public/focus') }}/vendor/pg-calendar/js/pignose.calendar.min.js"></script>
+    <script src="{{ url('public') }}/focus/vendor/moment/moment.min.js"></script>
+    <script src="{{ url('public') }}/focus/vendor/pg-calendar/js/pignose.calendar.min.js"></script>
 
 
-    <script src="{{ url('public/focus') }}/js/dashboard/dashboard-2.js"></script>
+    <script src="{{ url('public') }}/focus/js/dashboard/dashboard-2.js"></script>
     <!-- Circle progress -->
 
     <!-- Datatable -->
-    <script src="{{ url('public/focus') }}/vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="{{ url('public/focus') }}/js/plugins-init/datatables.init.js"></script>
+    <script src="{{ url('public') }}/focus/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="{{ url('public') }}/focus/js/plugins-init/datatables.init.js"></script>
     <!-- Summernote -->
-    <script src="{{ url('public/focus') }}/vendor/summernote/js/summernote.min.js"></script>
+    <script src="{{ url('public') }}/focus/vendor/summernote/js/summernote.min.js"></script>
     <!-- Summernote init -->
-    <script src="{{ url('public/focus') }}/js/plugins-init/summernote-init.js"></script>
+    <script src="{{ url('public') }}/focus/js/plugins-init/summernote-init.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     @stack('script')

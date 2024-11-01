@@ -1,6 +1,6 @@
 <li>
     <a href="{{$url}}"
-    class="{{$class}}"
+    class="{{$class}} text-dark"
     >{{$label}}</a>
 </li>
 
