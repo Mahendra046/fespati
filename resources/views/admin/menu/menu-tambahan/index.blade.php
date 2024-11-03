@@ -48,15 +48,6 @@
                                                 <small class="form-text text-muted">Opsional. Jika kosong, gunakan URL
                                                     default.</small>
                                             </div>
-                                            <div class="mb-3">
-                                                <label for="url" class="form-label">Level Menu</label>
-                                                <select class="form-control" name="level" id="">
-                                                    <option value="1">Submenu 1</option>
-                                                    <option value="2">Submenu 2</option>
-                                                </select>
-                                                <small class="form-text text-muted">pilih level submenu.</small>
-                                            </div>
-
                                             <!-- Level Menu -->
 
                                             <button class="btn btn-primary">Simpan</button>
@@ -146,15 +137,6 @@
                                                                 <small class="form-text text-muted">Opsional. Jika kosong, gunakan URL
                                                                     default.</small>
                                                             </div>
-                                                            <div class="mb-3">
-                                                                <label for="url" class="form-label">Level Menu</label>
-                                                                <select class="form-control" name="level" id="">
-                                                                    <option value="1">Submenu 1</option>
-                                                                    <option value="2">Submenu 2</option>
-                                                                </select>
-                                                                <small class="form-text text-muted">pilih level submenu.</small>
-                                                            </div>
-                
                                                             <button class="btn btn-primary">Simpan</button>
                                                         </form>
                                                     </div>

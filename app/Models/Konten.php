@@ -4,8 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 
@@ -13,68 +11,64 @@ class Konten extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'id_menu', 'judul', 'deskripsi', 'file', 'jenis_file', 'tanggal', 'link_konten', 'pembuat'
-    ];
+    protected $table = 'konten';
 
-    // Relasi ke menu
-    public function menu()
+    public function handleUploadImage()
     {
-        return $this->belongsTo(Menu::class, 'id_menu');
-    }
-
-    // Validasi
-    public static function validate($data)
-    {
-        return Validator::make($data, [
-            'id_menu' => 'required|exists:menu,id',
-            'judul' => 'required|string|max:255',
-            'deskripsi' => 'nullable|string',
-            'file' => 'nullable|file',
-            'jenis_file' => 'required|in:pdf,image,url',
-            'tanggal' => 'nullable|date',
-            'link_konten' => 'nullable|url',
-            'pembuat' => 'nullable|string|max:255'
-        ]);
-    }
-
-    public function handleUploadFile()
-    {
-        $this->handleDelete(); // Hapus file lama jika ada
+        $this->handleDelete();
 
         if (request()->hasFile('file')) {
             $file = request()->file('file');
-
-            // Tentukan folder berdasarkan jenis file
-            switch ($this->jenis_file) {
-                case 'pdf':
-                    $destination = "uploads/konten/pdf";
-                    break;
-                case 'image':
-                    $destination = "uploads/konten/images";
-                    break;
-                default:
-                    $destination = "uploads/konten/others";
-                    break;
-            }
-
+            $destination = "images";
             $randomStr = Str::random(5);
             $filename = time() . "-" . $randomStr . "." . $file->extension();
             $url = $file->storeAs($destination, $filename);
-
-            $this->file = "storage/" . $url; // Simpan path di kolom file
+            $this->file = "app/" . $url;
             $this->save();
         }
     }
 
-    // Fungsi untuk menghapus file dari storage
+    // Fungsi untuk mengupload file PDF
+    public function handleUploadPdf()
+    {
+        $this->handleDelete();
+
+        if (request()->hasFile('file')) {
+            $file = request()->file('file');
+            $destination = "pdfs";
+            $randomStr = Str::random(5);
+            $filename = time() . "-" . $randomStr . "." . $file->extension();
+            $url = $file->storeAs($destination, $filename);
+            $this->file = "app/" . $url;
+            $this->jenis_file = 'pdf';
+            $this->save();
+        }
+    }
+
+    // Fungsi untuk mengatur konten URL tanpa file fisik
+    public function handleUploadTeks()
+    {
+        $this->handleDelete();
+
+        $this->file = null; // Tidak ada file fisik untuk jenis URL
+        $this->jenis_file = 'teks';
+        $this->link_konten = request()->input('link_konten');
+        $this->save();
+    }
+
+    // Fungsi untuk menghapus file lama jika ada
     public function handleDelete()
     {
-        $file = $this->file;
-        if ($file && Storage::exists(str_replace('storage/', '', $file))) {
-            Storage::delete(str_replace('storage/', '', $file));
-            return true;
+        if ($this->file && $this->jenis_file !== 'url') {
+            $path = public_path($this->file);
+            if (file_exists($path)) {
+                unlink($path);
+            }
         }
-        return false;
+    }
+
+    public function menu()
+    {
+        return $this->belongsTo(Menu::class, 'id_menu');
     }
 }

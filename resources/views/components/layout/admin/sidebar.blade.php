@@ -13,7 +13,14 @@
                     <x-layout.sidebar.menu-item url="admin/menu-tambahan" label="Menu Tambahan" icon="ti-layers-alt" />
                 </ul>
             </li>
-            <x-layout.sidebar.menu-item url="admin/konten" label="Konten" icon="ti-image" />
+            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                        class="ti-agenda"></i><span class="nav-text">Konten</span></a>
+                <ul aria-expanded="false">
+                    <x-layout.sidebar.menu-item url="admin/konten-jpg" label="Konten JPG" icon="ti-image" />
+                    <x-layout.sidebar.menu-item url="admin/konten-pdf" label="Konten PDF" icon="ti-file" />
+                    <x-layout.sidebar.menu-item url="admin/konten-teks" label="Konten Teks" icon="ti-write" />
+                </ul>
+            </li>
             <li class="nav-label first text-light">Menu Lama</li>
             <!-- <li><a href="index.html"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
                             </li> -->
