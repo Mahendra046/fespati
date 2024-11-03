@@ -3,63 +3,65 @@
 namespace App\Http\Controllers\Admin\Konten;
 
 use App\Http\Controllers\Controller;
+use App\Models\Konten;
+use App\Models\Menu;
 use Illuminate\Http\Request;
 
 class TeksController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index()
     {
-        //
+        $menu = Menu::where('level','1')->get();
+        $teks = Konten::where('jenis_file','teks')->get();
+        return view('admin.konten.teks.index',compact('teks','menu'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $konten = new Konten;
+        $konten->id_menu = $request->id_menu;
+        $konten->judul = $request->judul;
+        $konten->tanggal = $request->tanggal;
+        $konten->deskripsi = $request->deskripsi;
+        $konten->jenis_file = 'teks';
+        $konten->deskripsi = $request->deskripsi;
+        $konten->save();
+        return back()->with('success','konten berhasil ditambahkan');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
-        //
+        $konten = Konten::find($id);
+        $konten->id_menu = $request->id_menu;
+        $konten->judul = $request->judul;
+        $konten->tanggal = $request->tanggal;
+        $konten->deskripsi = $request->deskripsi;
+        $konten->jenis_file = 'teks';
+        $konten->deskripsi = $request->deskripsi;
+        $konten->save();
+        return back()->with('success','konten berhasil ditambahkan');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-        //
+        $konten = Konten::find($id);
+        $konten->delete();
+        return back()->with('success','konten telah dihapus');
     }
 }

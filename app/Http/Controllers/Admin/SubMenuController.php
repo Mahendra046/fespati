@@ -11,7 +11,7 @@ class SubMenuController extends Controller
     public function index()
     {
         $menuinduk = Menu::where('level','0')->get();
-        $menus = Menu::whereIn('level', '1')->get();
+        $menus = Menu::where('level', '1')->get();
         return view('admin.menu.menu-tambahan.index', compact('menus','menuinduk'));
     }
 

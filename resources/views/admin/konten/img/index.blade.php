@@ -100,7 +100,7 @@
                                         </tr>
                                         {{-- Modal Edit Start --}}
                                         <div class="modal fade" id="edit{{ $jpg->id }}">
-                                            <div class="modal-dialog" role="document">
+                                            <div class="modal-dialog modal-lg" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header" style="background: #3b4268">
                                                         <h5 class="modal-title text-white">Edit Data JPG</h5>

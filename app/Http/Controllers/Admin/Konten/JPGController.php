@@ -16,7 +16,7 @@ class JPGController extends Controller
     {
        $menu = Menu::where('level','1')->get();
        $jpg = Konten::where('jenis_file','image')->get();
-        return view('admin.konten.img.index', compact('jpg','menu'));
+       return view('admin.konten.img.index', compact('jpg','menu'));
     }
 
     public function store(Request $request)
