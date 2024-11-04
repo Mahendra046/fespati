@@ -19,41 +19,31 @@
         <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
         <nav id="navbar" class="navbar">
             <ul>
+                
+            </ul>
+            <ul>
                 <x-layout.depan.header.menu-item url="beranda" label="Beranda"
                     class="{{ checkRouteActive('beranda') }}" />
-                <li class="dropdown"><a href="#"
-                        class="text-dark {{ checkRouteActive('sejarah') }} {{ checkRouteActive('visi_misi') }} {{ checkRouteActive('struktur_organisasi') }}"><span>Tentang
-                            Kami</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                    <ul>
-                        <x-layout.depan.header.menu-item url="sejarah" label="Sejarah Fespati"
-                            class="{{ checkRouteActive('sejarah') }}" />
-                        <x-layout.depan.header.menu-item url="visi_misi" label="Visi Misi Fespati"
-                            class="{{ checkRouteActive('visi_misi') }}" />
-                        <x-layout.depan.header.menu-item url="struktur_organisasi" label="Struktur Organisasi Fespati Ketapang"
-                            class="{{ checkRouteActive('struktur_organisasi') }}" />
-                    </ul>
-                </li>
-
-                <li class="dropdown"><a href="#"
-                        class="text-dark {{ checkRouteActive('registrasi_anggota') }} {{ checkRouteActive('event') }} {{ checkRouteActive('berita') }} {{ checkRouteActive('berita/detail/{berita}') }} "><span>Informasi</span>
-                        <i class="bi bi-chevron-down dropdown-indicator  "></i></a>
-                    <ul>
-                        <x-layout.depan.header.menu-item url="berita" label="Berita"
-                            class="{{ checkRouteActive('berita') }} {{ checkRouteActive('berita/detail/{berita}') }}" />
-                        <x-layout.depan.header.menu-item url="event" label="Event"
-                            class="{{ checkRouteActive('event') }}" />
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="#"
-                        class="text-dark {{ checkRouteActive('foto') }} {{ checkRouteActive('video') }}"><span>Media</span> <i
-                            class="bi bi-chevron-down dropdown-indicator  "></i></a>
-                    <ul>
-                        <x-layout.depan.header.menu-item url="foto" label="Foto"
-                            class="{{ checkRouteActive('foto') }}" />
-                    </ul>
-                </li>
-                <x-layout.depan.header.menu-item url="register" label="Register KTA"
-                            class="{{ checkRouteActive('register') }}" />
+                    @foreach($menu as $item)
+                    <li class="dropdown">
+                        <a href="{{ url('menu/' . $item->id) }}"
+                            class="text-dark {{ checkRouteActive('menu/' . $item->id) }}">
+                            <span>{{ $item->judul }}</span>
+                            <i class="bi bi-chevron-down dropdown-indicator"></i>
+                        </a>
+                        
+                        @if($item->submenus->isNotEmpty())
+                            <ul>
+                                @foreach($item->submenus as $submenu)
+                                    <x-layout.depan.header.menu-item 
+                                        :url="url('/' . $item->id . '/' . $submenu->id)" 
+                                        :label="$submenu->judul" 
+                                        class="{{ checkRouteActive('/' . $item->id . '/' . $submenu->id) }}" />
+                                @endforeach
+                            </ul>
+                        @endif
+                    </li>
+                @endforeach
 
                 <a href="{{ url('kontak') }}" class="btn-get-started"
                     style="font-family: var(--font-primary);

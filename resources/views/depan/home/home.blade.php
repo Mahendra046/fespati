@@ -52,108 +52,55 @@
 
     <main id="main">
 
-        <section id="blog" class="blog">
+        <section id="contact" class="contact">
             <div class="container" data-aos="fade-up" data-aos-delay="100">
-
                 <div class="section-header">
-                    <h2>Berita Terbaru</h2>
-                    {{-- mau caption tinggal kasih paragraf --}}
+                    <h2>PPID KOTA BALIKPAPAN</h2>
+                    <p>LAYANAN DAN INFORMASI PUBLIK</p>
                 </div>
-
-                <div class="row gy-4 posts-list">
-
-                    @foreach ($recent_berita as $berita)
-                        <div class="col-xl-4 col-md-6">
-                            <div class="post-item position-relative h-100">
-
-                                <div class="post-img position-relative overflow-hidden">
-                                    <img src="{{ url("public/$berita->foto") }}"
-                                        style="height:250px; width:500px; background-size: cover;" class="img-fluid"
-                                        alt="">
-                                    <span class="post-date">{{ $berita->created_at->format('d F Y') }}</span>
-                                </div>
-
-                                <div class="post-content d-flex flex-column">
-
-                                    <h3 class="post-title">{{ $berita->judul }}</h3>
-
-                                    <div class="meta d-flex align-items-center">
-                                        <div class="d-flex align-items-center">
-                                            <i class="bi bi-person"></i> <span class="ps-2">Admin</span>
-                                        </div>
-                                        <span class="px-3 text-black-50">/</span>
-                                        <div class="d-flex align-items-center">
-                                            <i class="bi bi-folder2"></i> <span class="ps-2">Kategori</span>
-                                        </div>
-                                    </div>
-
-                                    <hr>
-
-                                    <a href="{{ url('berita/detail', $berita->id) }}"
-                                        class="readmore stretched-link"><span>Baca
-                                            Selengkapnya</span><i class="bi bi-arrow-right"></i></a>
-
-                                </div>
-
+                <div class="row gy-4">
+                    <div class="col-lg-3 col-md-3">
+                        <a href="https://wa.me/62895372200063?text=Isi Pesan">
+                            <div class="info-item d-flex flex-column justify-content-center align-items-center">
+                                <img src="{{ url('public') }}/Up/assets/img/layanan/client1.png" alt="" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
-                        </div><!-- End post list item -->
-                    @endforeach
-
-                </div><!-- End blog posts list -->
-                <br><br>
-                <div class="row justify-content-center">
-                    <div class="col-lg-6 text-center">
-                        <a data-aos="fade-up" data-aos-delay="200" href="{{ url('berita') }}" class="btn-get-started"
-                            style="font-family: var(--font-primary);
-                        font-weight: 500;
-                        font-size: 20px;
-                        letter-spacing: 1px;
-                        display: inline-block;
-                        padding: 12px 30px;
-                        border-radius: 50px;
-                        margin: 6px;
-                        color: #fff;
-                        background: var(--color-primary);">Berita
-                            Lainnya</a>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <a href="https://wa.me/62895372200063?text=Isi Pesan">
+                            <div class="info-item d-flex flex-column justify-content-center align-items-center">
+                                <img src="{{ url('public') }}/Up/assets/img/layanan/client2.png" alt="" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <a href="https://wa.me/62895372200063?text=Isi Pesan">
+                            <div class="info-item d-flex flex-column justify-content-center align-items-center">
+                                <img src="{{ url('public') }}/Up/assets/img/layanan/client3.png" alt="" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <a href="https://wa.me/62895372200063?text=Isi Pesan">
+                            <div class="info-item d-flex flex-column justify-content-center align-items-center">
+                                <img src="{{ url('public') }}/Up/assets/img/layanan/client4.png" alt="" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                        </a>
                     </div>
                 </div>
-
-            </div>
-        </section><!-- End Blog Section -->
-
-        <!-- ======= Services Section ======= -->
-        <section id="projects" class="projects" style="background-color:#f5f6f7">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-header">
-                    <h2>Event Fespati</h2>
-                    <p>Federasi Panahan Tradisional Indonesia</p>
+    
+                <div class="row gy-4 mt-1">
+    
+                    <div class="col-lg-12 ">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2320.353680999989!2d109.96771672800452!3d-1.8204812996290975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e0518931def7153%3A0x666e3a9a4aa24fb2!2sGg.%20Radikin%2C%20Payah%20Kumang%2C%20Kec.%20Delta%20Pawan%2C%20Kabupaten%20Ketapang%2C%20Kalimantan%20Barat!5e0!3m2!1sid!2sid!4v1688310939559!5m2!1sid!2sid"
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div><!-- End Google Maps -->
                 </div>
-
-                <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
-                    @foreach ($list_event as $event)
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
-                            <div class="portfolio-content h-100" style=" max-height: 250px; overflow: hidden;">
-                                <img src="{{ url("public/$event->foto") }}"style="object-fit:cover; width:100% height:100%;"
-                                    class="img-fluid" alt="">
-                                <div class="portfolio-info">
-                                    <h4>{{ $event->nama_event }}</h4>
-                                    <p>{{ $event->nama_event }}</p>
-                                    <a href="{{ url("public/$event->foto") }}" title="{{ $event->nama_event }}"
-                                        data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i
-                                            class="bi bi-zoom-in"></i></a>
-                                    <a href="{{ url('event_detail', $event->id) }}" title="Daftar Sekarang"
-                                        class="details-link"><i class="bi bi-link-45deg"></i></a>
-                                </div>
-                            </div>
-                        </div><!-- End Projects Item -->
-                    @endforeach
-
-                </div><!-- End Projects Container -->
-
+    
             </div>
-        </section><!-- End Services Section -->
-
+        </section><!-- End Contact Section -->
 
 
     </main><!-- End #main -->

@@ -11,9 +11,8 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     function index(){
-        $data['recent_berita'] = Berita::orderBy('id','DESC')->take(3)->get();
-        $data['list_event'] = Event::all();
-        return view('depan.home.home', $data);
+        
+        return view('depan.home.home');
     }
 
     function galeri(){
